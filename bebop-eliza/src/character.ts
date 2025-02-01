@@ -5,7 +5,7 @@ export const character: Character = {
     name: "DeFi Assistant",
     plugins: [],
     clients: [Clients.TELEGRAM, Clients.DIRECT],
-    modelProvider: ModelProviderName.OPENAI,
+    modelProvider: ModelProviderName.OPENROUTER,
     settings: {
         secrets: {
             EVM_PRIVATE_KEY: process.env.EVM_PRIVATE_KEY,
