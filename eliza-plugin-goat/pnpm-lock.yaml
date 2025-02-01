@@ -30,8 +30,8 @@ importers:
         specifier: ^0.2.0
         version: 0.2.0(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3))(viem@2.22.17(typescript@5.7.3)(zod@3.23.8))
       goat-erc4626:
-        specifier: ^0.1.0
-        version: 0.1.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)
+        specifier: ^0.1.1
+        version: 0.1.1(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)
       viem:
         specifier: ^2.22.17
         version: 2.22.17(typescript@5.7.3)(zod@3.23.8)
@@ -1399,8 +1399,8 @@ packages:
     engines: {node: 20 || >=22}
     hasBin: true
 
-  goat-erc4626@0.1.0:
-    resolution: {integrity: sha512-p9Qn9JR034oDZESRJjJcegGLFa0akqfnadqWBzcBYMjSnSbX+vQi13xCCwEuET/PaKzpyuuSx7qN5Bdr6wXAGQ==}
+  goat-erc4626@0.1.1:
+    resolution: {integrity: sha512-eJrbmtDPV1qO0MvWBp4Oen9FBN5s1XjzvXlheLuvdeyHAwPX/331PXBguR3sW5t6HDtPplDOT+qCCjJdpWqlag==}
     peerDependencies:
       '@goat-sdk/core': ^0.4.6
 
@@ -3814,7 +3814,7 @@ snapshots:
       package-json-from-dist: 1.0.1
       path-scurry: 2.0.0
 
-  goat-erc4626@0.1.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3):
+  goat-erc4626@0.1.1(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3):
     dependencies:
       '@goat-sdk/core': 0.4.6(zod@3.23.8)
       '@goat-sdk/wallet-evm': 0.2.7(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)
