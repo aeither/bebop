@@ -2,6 +2,9 @@ import { DirectClient } from "@elizaos/client-direct";
 import {
   AgentRuntime,
   type Character,
+  type ICacheManager,
+  type IDatabaseAdapter,
+  type Plugin,
   elizaLogger,
   settings,
   stringToUuid,
@@ -34,7 +37,7 @@ export const wait = (minTime = 1000, maxTime = 3000) => {
   return new Promise((resolve) => setTimeout(resolve, waitTime));
 };
 
-let nodePlugin: any | undefined;
+let nodePlugin: Plugin | undefined;
 
 function getSecret(character: Character, secret: string) {
   return character.settings?.secrets?.[secret] || process.env[secret];
@@ -42,8 +45,8 @@ function getSecret(character: Character, secret: string) {
 
 export async function createAgent(
   character: Character,
-  db: any,
-  cache: any,
+  db: IDatabaseAdapter,
+  cache: ICacheManager,
   token: string
 ) {
   elizaLogger.success(
