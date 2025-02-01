@@ -31,5 +31,5 @@ services:
       - GROK_API_KEY=${GROK_API_KEY}
       - OPENROUTER_MODEL=${OPENROUTER_MODEL}
     ports:
-      - "9500:3000"
+      - "9501:3000"
     restart: always
