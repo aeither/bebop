@@ -6,7 +6,7 @@
       "ESNext",
       "dom"
     ],
-    "moduleResolution": "Bundler",
+    "moduleResolution": "bundler",
     "outDir": "./dist",
     "rootDir": ".",
     "strict": false,
@@ -22,6 +22,8 @@
     "checkJs": false,
     "noEmitOnError": false,
     "moduleDetection": "force",
-    "allowArbitraryExtensions": true
+    "allowArbitraryExtensions": true,
+    "emitDecoratorMetadata": true,
+    "experimentalDecorators": true,
   }
 }

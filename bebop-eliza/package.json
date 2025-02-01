@@ -24,6 +24,11 @@
     "@elizaos/plugin-node": "0.1.9",
     "@elizaos/plugin-solana": "0.1.9",
     "@elizaos/plugin-starknet": "0.1.9",
+    "@goat-sdk/adapter-vercel-ai": "^0.2.7",
+    "@goat-sdk/core": "^0.4.6",
+    "@goat-sdk/plugin-erc20": "^0.2.9",
+    "@goat-sdk/wallet-evm": "^0.2.7",
+    "@goat-sdk/wallet-viem": "^0.2.7",
     "@tavily/core": "0.0.2",
     "amqplib": "0.10.5",
     "better-sqlite3": "11.5.0",
@@ -33,8 +38,10 @@
     "path": "0.12.7",
     "readline": "1.3.0",
     "url": "0.11.4",
+    "viem": "^2.22.17",
     "ws": "8.18.0",
-    "yargs": "17.7.2"
+    "yargs": "17.7.2",
+    "zod": "^3.22.4"
   },
   "engines": {
     "node": ">=22"
