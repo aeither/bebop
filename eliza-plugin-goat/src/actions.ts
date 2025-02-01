@@ -60,7 +60,8 @@ export async function getOnChainActions(wallet: WalletClientBase) {
 function getActionHandler(
     actionName: string,
     actionDescription: string,
-    tools
+    // biome-ignore lint/suspicious/noExplicitAny: <explanation>
+    tools: any
 ) {
     return async (
         runtime: IAgentRuntime,
