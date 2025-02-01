@@ -3,6 +3,9 @@
 !index.ts
 !character.ts
 
+# Dont ignore goat
+!goat/**/*
+
 # Build output and dependencies
 dist/
 node_modules/
