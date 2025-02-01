@@ -19,16 +19,19 @@ importers:
         version: 0.4.6(zod@3.23.8)
       '@goat-sdk/plugin-erc20':
         specifier: ^0.2.2
-        version: 0.2.2(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)(viem@2.21.49(typescript@5.7.3)(zod@3.23.8))
+        version: 0.2.2(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)(viem@2.22.17(typescript@5.7.3)(zod@3.23.8))
       '@goat-sdk/plugin-kim':
         specifier: ^0.1.2
-        version: 0.1.2(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)(viem@2.21.49(typescript@5.7.3)(zod@3.23.8))
+        version: 0.1.2(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)(viem@2.22.17(typescript@5.7.3)(zod@3.23.8))
       '@goat-sdk/wallet-evm':
         specifier: ^0.2.0
         version: 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)
       '@goat-sdk/wallet-viem':
         specifier: ^0.2.0
-        version: 0.2.0(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3))(viem@2.21.49(typescript@5.7.3)(zod@3.23.8))
+        version: 0.2.0(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3))(viem@2.22.17(typescript@5.7.3)(zod@3.23.8))
+      viem:
+        specifier: ^2.22.17
+        version: 2.22.17(typescript@5.7.3)(zod@3.23.8)
       whatwg-url:
         specifier: ^7.1.0
         version: 7.1.0
@@ -648,8 +651,16 @@ packages:
     resolution: {integrity: sha512-TlaHRXDehJuRNR9TfZDNQ45mMEd5dwUwmicsafcIX4SsNiqnCHKjE/1alYPd/lDRVhxdhUAlv8uEhMCI5zjIJQ==}
     engines: {node: ^14.21.3 || >=16}
 
+  '@noble/curves@1.8.1':
+    resolution: {integrity: sha512-warwspo+UYUPep0Q+vtdVB4Ugn8GGQj8iyB3gnRWsztmUHTI3S1nhdiWNsPUGL0vud7JlRRk1XEu7Lq1KGTnMQ==}
+    engines: {node: ^14.21.3 || >=16}
+
   '@noble/hashes@1.5.0':
     resolution: {integrity: sha512-1j6kQFb7QRru7eKN3ZDvRcP13rugwdxZqCjbiAVZfIJwgj2A65UmT4TgARXGlXgnRkORLTDTrO19ZErt7+QXgA==}
+    engines: {node: ^14.21.3 || >=16}
+
+  '@noble/hashes@1.7.1':
+    resolution: {integrity: sha512-B8XBPsn4vT/KJAGqDzbwztd+6Yte3P4V7iafm24bxgDe/mlRuK6xmWPuCNrKt2vDafZ8MfJLlchDG/vYafQEjQ==}
     engines: {node: ^14.21.3 || >=16}
 
   '@opentelemetry/api@1.9.0':
@@ -758,11 +769,20 @@ packages:
   '@scure/base@1.1.9':
     resolution: {integrity: sha512-8YKhl8GHiNI/pU2VMaofa2Tor7PJRAjwQLBBuilkJ9L5+13yVbC7JO/wS7piioAvPSwR3JKM1IJ/u4xQzbcXKg==}
 
+  '@scure/base@1.2.4':
+    resolution: {integrity: sha512-5Yy9czTO47mqz+/J8GM6GIId4umdCk1wc1q8rKERQulIoc8VP9pzDcghv10Tl2E7R96ZUx/PhND3ESYUQX8NuQ==}
+
   '@scure/bip32@1.5.0':
     resolution: {integrity: sha512-8EnFYkqEQdnkuGBVpCzKxyIwDCBLDVj3oiX0EKUFre/tOjL/Hqba1D6n/8RcmaQy4f95qQFrO2A8Sr6ybh4NRw==}
 
+  '@scure/bip32@1.6.2':
+    resolution: {integrity: sha512-t96EPDMbtGgtb7onKKqxRLfE5g05k7uHnHRM2xdE6BP/ZmxaLtPek4J4KfVn/90IQNrU1IOAqMgiDtUdtbe3nw==}
+
   '@scure/bip39@1.4.0':
     resolution: {integrity: sha512-BEEm6p8IueV/ZTfQLp/0vhw4NPnT9oWf5+28nvmeUICjP99f4vr2d+qc7AVGDDtwRep6ifR43Yed9ERVmiITzw==}
+
+  '@scure/bip39@1.5.4':
+    resolution: {integrity: sha512-TFM4ni0vKvCfBpohoh+/lY05i9gRbSwXWngAsF4CABQxoaOHijxuaZ2R6cStDQ5CHtHO9aGJTr4ksVJASRRyMA==}
 
   '@smithy/abort-controller@4.0.1':
     resolution: {integrity: sha512-fiUIYgIgRjMWznk6iLJz35K2YxSLHzLBA/RC6lBrKfQ8fHbPfvk7Pk9UvpKoHgJjI18MnbPuEju53zcVy6KF1g==}
@@ -1690,6 +1710,14 @@ packages:
       typescript:
         optional: true
 
+  ox@0.6.7:
+    resolution: {integrity: sha512-17Gk/eFsFRAZ80p5eKqv89a57uXjd3NgIf1CaXojATPBuujVc/fQSVhBeAU9JCRB+k7J50WQAyWTxK19T9GgbA==}
+    peerDependencies:
+      typescript: '>=5.4.0'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
   p-finally@1.0.0:
     resolution: {integrity: sha512-LICb2p9CB7FS+0eR1oqWnHhp0FljGLZCWBE9aix0Uye9W8LTQPwMTYVGWQWIw9RdQiDg4+epXQODwIYJtSJaow==}
     engines: {node: '>=4'}
@@ -2029,6 +2057,14 @@ packages:
 
   viem@2.21.49:
     resolution: {integrity: sha512-NNItYfTv4+yGE5DDKc+S/g2S7KeJn047GwgEYG60FAJlK0FzwuP6lQKSeQ8k7Y4VasfuKPqiT+XiilcCtTRiDQ==}
+    peerDependencies:
+      typescript: '>=5.0.4'
+    peerDependenciesMeta:
+      typescript:
+        optional: true
+
+  viem@2.22.17:
+    resolution: {integrity: sha512-eqNhlPGgRLR29XEVUT2uuaoEyMiaQZEKx63xT1py9OYsE+ZwlVgjnfrqbXad7Flg2iJ0Bs5Hh7o0FfRWUJGHvg==}
     peerDependencies:
       typescript: '>=5.0.4'
     peerDependenciesMeta:
@@ -2842,22 +2878,22 @@ snapshots:
       reflect-metadata: 0.2.2
       zod: 3.23.8
 
-  '@goat-sdk/plugin-erc20@0.2.2(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)(viem@2.21.49(typescript@5.7.3)(zod@3.23.8))':
+  '@goat-sdk/plugin-erc20@0.2.2(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)(viem@2.22.17(typescript@5.7.3)(zod@3.23.8))':
     dependencies:
       '@goat-sdk/core': 0.4.6(zod@3.23.8)
       '@goat-sdk/wallet-evm': 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)
-      viem: 2.21.49(typescript@5.7.3)(zod@3.23.8)
+      viem: 2.22.17(typescript@5.7.3)(zod@3.23.8)
       zod: 3.23.8
     transitivePeerDependencies:
       - bufferutil
       - typescript
       - utf-8-validate
 
-  '@goat-sdk/plugin-kim@0.1.2(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)(viem@2.21.49(typescript@5.7.3)(zod@3.23.8))':
+  '@goat-sdk/plugin-kim@0.1.2(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)(viem@2.22.17(typescript@5.7.3)(zod@3.23.8))':
     dependencies:
       '@goat-sdk/core': 0.4.6(zod@3.23.8)
       '@goat-sdk/wallet-evm': 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)
-      viem: 2.21.49(typescript@5.7.3)(zod@3.23.8)
+      viem: 2.22.17(typescript@5.7.3)(zod@3.23.8)
       zod: 3.23.8
     transitivePeerDependencies:
       - bufferutil
@@ -2875,10 +2911,10 @@ snapshots:
       - typescript
       - utf-8-validate
 
-  '@goat-sdk/wallet-viem@0.2.0(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3))(viem@2.21.49(typescript@5.7.3)(zod@3.23.8))':
+  '@goat-sdk/wallet-viem@0.2.0(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3))(viem@2.22.17(typescript@5.7.3)(zod@3.23.8))':
     dependencies:
       '@goat-sdk/wallet-evm': 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)
-      viem: 2.21.49(typescript@5.7.3)(zod@3.23.8)
+      viem: 2.22.17(typescript@5.7.3)(zod@3.23.8)
 
   '@google-cloud/vertexai@1.9.3':
     dependencies:
@@ -2952,7 +2988,13 @@ snapshots:
     dependencies:
       '@noble/hashes': 1.5.0
 
+  '@noble/curves@1.8.1':
+    dependencies:
+      '@noble/hashes': 1.7.1
+
   '@noble/hashes@1.5.0': {}
+
+  '@noble/hashes@1.7.1': {}
 
   '@opentelemetry/api@1.9.0': {}
 
@@ -3018,16 +3060,29 @@ snapshots:
 
   '@scure/base@1.1.9': {}
 
+  '@scure/base@1.2.4': {}
+
   '@scure/bip32@1.5.0':
     dependencies:
       '@noble/curves': 1.6.0
       '@noble/hashes': 1.5.0
       '@scure/base': 1.1.9
 
+  '@scure/bip32@1.6.2':
+    dependencies:
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
+      '@scure/base': 1.2.4
+
   '@scure/bip39@1.4.0':
     dependencies:
       '@noble/hashes': 1.5.0
       '@scure/base': 1.1.9
+
+  '@scure/bip39@1.5.4':
+    dependencies:
+      '@noble/hashes': 1.7.1
+      '@scure/base': 1.2.4
 
   '@smithy/abort-controller@4.0.1':
     dependencies:
@@ -4030,6 +4085,20 @@ snapshots:
     transitivePeerDependencies:
       - zod
 
+  ox@0.6.7(typescript@5.7.3)(zod@3.23.8):
+    dependencies:
+      '@adraffy/ens-normalize': 1.11.0
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
+      abitype: 1.0.8(typescript@5.7.3)(zod@3.23.8)
+      eventemitter3: 5.0.1
+    optionalDependencies:
+      typescript: 5.7.3
+    transitivePeerDependencies:
+      - zod
+
   p-finally@1.0.0: {}
 
   p-queue@6.6.2:
@@ -4387,6 +4456,23 @@ snapshots:
       isows: 1.0.6(ws@8.18.0)
       ox: 0.1.2(typescript@5.7.3)(zod@3.23.8)
       webauthn-p256: 0.0.10
+      ws: 8.18.0
+    optionalDependencies:
+      typescript: 5.7.3
+    transitivePeerDependencies:
+      - bufferutil
+      - utf-8-validate
+      - zod
+
+  viem@2.22.17(typescript@5.7.3)(zod@3.23.8):
+    dependencies:
+      '@noble/curves': 1.8.1
+      '@noble/hashes': 1.7.1
+      '@scure/bip32': 1.6.2
+      '@scure/bip39': 1.5.4
+      abitype: 1.0.8(typescript@5.7.3)(zod@3.23.8)
+      isows: 1.0.6(ws@8.18.0)
+      ox: 0.6.7(typescript@5.7.3)(zod@3.23.8)
       ws: 8.18.0
     optionalDependencies:
       typescript: 5.7.3

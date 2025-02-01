@@ -1,5 +1,5 @@
 {
-	"name": "@elizaos/plugin-goat",
+	"name": "eliza-plugin-goat",
 	"version": "0.1.9",
 	"type": "module",
 	"main": "dist/index.js",
@@ -22,7 +22,9 @@
 			}
 		}
 	},
-	"files": ["dist"],
+	"files": [
+		"dist"
+	],
 	"dependencies": {
 		"@elizaos/core": "^0.1.9",
 		"@goat-sdk/adapter-vercel-ai": "^0.2.0",
@@ -30,7 +32,8 @@
 		"@goat-sdk/plugin-erc20": "^0.2.2",
 		"@goat-sdk/plugin-kim": "^0.1.2",
 		"@goat-sdk/wallet-evm": "^0.2.0",
-		"@goat-sdk/wallet-viem": "^0.2.0"
+		"@goat-sdk/wallet-viem": "^0.2.0",
+		"viem": "^2.22.17"
 	},
 	"devDependencies": {
 		"@biomejs/biome": "^1.9.4",

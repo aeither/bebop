@@ -7,13 +7,13 @@ import {
   stringToUuid,
 } from "@elizaos/core";
 import { bootstrapPlugin } from "@elizaos/plugin-bootstrap";
-import createGoatPlugin from "@elizaos/plugin-goat";
 import { createNodePlugin } from "@elizaos/plugin-node";
 import { solanaPlugin } from "@elizaos/plugin-solana";
-import fs from "fs";
-import net from "net";
-import path from "path";
-import { fileURLToPath } from "url";
+import createGoatPlugin from "eliza-plugin-goat";
+import fs from "node:fs";
+import net from "node:net";
+import path from "node:path";
+import { fileURLToPath } from "node:url";
 import { initializeDbCache } from "./cache/index.ts";
 import { character } from "./character.ts";
 import { startChat } from "./chat/index.ts";
@@ -57,6 +57,8 @@ export async function createAgent(
   const goatPlugin = await createGoatPlugin((secret) =>
     getSecret(character, secret)
   );
+
+  console.log('Available GOAT actions:', goatPlugin.actions.map(action => action.name));
 
   return new AgentRuntime({
     databaseAdapter: db,

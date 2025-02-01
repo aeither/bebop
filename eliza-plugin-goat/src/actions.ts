@@ -1,18 +1,30 @@
 import { getOnChainTools } from "@goat-sdk/adapter-vercel-ai";
-import { MODE, USDC, erc20 } from "@goat-sdk/plugin-erc20";
+import type { WalletClientBase } from "@goat-sdk/core";
+import { type Token, erc20 } from "@goat-sdk/plugin-erc20";
 import { kim } from "@goat-sdk/plugin-kim";
 import { sendETH } from "@goat-sdk/wallet-evm";
-import type { WalletClientBase } from "@goat-sdk/core";
 
 import {
-    generateText,
     type HandlerCallback,
     type IAgentRuntime,
     type Memory,
     ModelClass,
     type State,
     composeContext,
+    generateText,
 } from "@elizaos/core";
+
+const sozuHausResident: Token = {
+    decimals: 18,
+    symbol: "SHR",
+    name: "SozuHausResident",
+    chains: {
+        "5003": {
+            // Mantle Sepolia chain ID
+            contractAddress: "0xdeB1e008F224c959B75aCCA5413a150DC7049E67", // Replace with actual contract address
+        },
+    },
+};
 
 export async function getOnChainActions(wallet: WalletClientBase) {
     const actionsWithoutHandler = [
@@ -23,13 +35,19 @@ export async function getOnChainActions(wallet: WalletClientBase) {
             validate: async () => true,
             examples: [],
         },
-        // 1. Add your actions here
+        {
+            name: "GET_TOKEN_BALANCE",
+            description: "Get the balance of an ERC20 token in base units. Convert to decimal units before returning.",
+            similes: [],
+            validate: async () => true,
+            examples: [],
+        },
     ];
 
     const tools = await getOnChainTools({
         wallet: wallet,
         // 2. Configure the plugins you need to perform those actions
-        plugins: [sendETH(), erc20({ tokens: [USDC, MODE] }), kim()],
+        plugins: [sendETH(), erc20({ tokens: [sozuHausResident] }), kim()],
     });
 
     // 3. Let GOAT handle all the actions
