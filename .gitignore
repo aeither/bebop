@@ -1,47 +1,37 @@
-# *.ts
-dist
+# Ignore all TypeScript files except index.ts and character.ts
+*.ts
 !index.ts
 !character.ts
-.env
-node_modules
+
+# Build output and dependencies
 dist/
-
-db.sqlite
-.idea
-
-/cache/
-!src/cache/
-
-# Dependencies
 node_modules/
 .pnpm-store/
-
-# Build outputs
-dist/
 build/
 *.tsbuildinfo
 
-# Environment variables
+# Environment and configuration
 .env
 .env.local
 .env.*
-
-# Docker
 .docker/
 docker-compose.override.yml
 *.dockerfile.yml
 
-# OS
-.DS_Store
-._.DS_Store
-**/.DS_Store
-**/._.DS_Store
+# Database
+db.sqlite
 
-# IDE
+# IDE and editor files
 .idea/
 .vscode/
 *.swp
 *.swo
+
+# OS generated files
+.DS_Store
+._.DS_Store
+**/.DS_Store
+**/._.DS_Store
 
 # Logs
 logs/
@@ -50,5 +40,9 @@ npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 
-# Data
+# Data directory
 data/
+
+# Cache directory, but include src/cache
+/cache/
+!src/cache/
