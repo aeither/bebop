@@ -2,12 +2,12 @@ services:
   eliza:
     command: ["pnpm", "start"]
     build:
-      context: ./bebop-eliza
+      context: .
       dockerfile: Dockerfile
     stdin_open: true
     tty: true
     volumes:
-      - ./bebop-eliza/data:/app/data
+      - ./data:/app/data
     environment:
       - OPENROUTER_API_KEY=${OPENROUTER_API_KEY}
       - ELEVENLABS_XI_API_KEY=${ELEVENLABS_XI_API_KEY}
