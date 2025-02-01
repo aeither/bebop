@@ -43,6 +43,9 @@ Assign Port and add rule to firewall
 
 In `docker-compose.yaml` change Port and expose it to firewall
 
+`ERR_USE_AFTER_CLOSE`
+on railway, digital ocean, needs to `DAEMON_PROCESS=true`
+
 ## Project folder name can't contain space
 
 node-hid issue when running `pnpm install`
