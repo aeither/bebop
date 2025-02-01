@@ -59,7 +59,14 @@ node-hid issue when running `pnpm install`
 
 Build it with Goat SDK. Import it. Map it to the GOAT Plugin.
 
-
+Why mono? to avoid 
+```bash
+cd ../goat-erc4646
+npm version patch && npm publish
+cd ../eliza-plugin-goat && pnpm install
+npm version patch && npm publish
+cd ../bebop-eliza && pnpm install
+```
 
 ## References
 
