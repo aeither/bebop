@@ -39,6 +39,10 @@ it is storing local if no postgres url is provided
 Use Docker Image `pgvector/pgvector:pg17` and add `POSTGRES_URL` to .env
 Assign Port and add rule to firewall
 
+## Deploy
+
+In `docker-compose.yaml` change Port and expose it to firewall
+
 ## Project folder name can't contain space
 
 node-hid issue when running `pnpm install`
