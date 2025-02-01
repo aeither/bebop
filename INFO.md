@@ -42,3 +42,9 @@ Use Docker Image `pgvector/pgvector:pg17` and add `POSTGRES_URL` to .env
 ## Project folder name can't contain space
 
 node-hid issue when running `pnpm install`
+
+## References
+
+https://github.com/elizaos/eliza
+
+https://github.com/goat-sdk/goat
