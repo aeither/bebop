@@ -1,8 +1,8 @@
 import { getOnChainTools } from "@goat-sdk/adapter-vercel-ai";
 import type { WalletClientBase } from "@goat-sdk/core";
 import { type Token, erc20 } from "@goat-sdk/plugin-erc20";
-import { kim } from "@goat-sdk/plugin-kim";
 import { sendETH } from "@goat-sdk/wallet-evm";
+import { type Vault, erc4626 } from "goat-erc4626";
 
 import {
     type HandlerCallback,
@@ -26,18 +26,79 @@ const sozuHausResident: Token = {
     },
 };
 
+// Define sozuHausResident Vault
+const sozuHausResidentVault: Vault = {
+    name: "SozuHausResidentVault",
+    chains: {
+        "5003": {
+            // Mantle Sepolia chain ID
+            contractAddress: "0x28c52E6c053AD4F2727E2F8de2AD5B81139ca9D4", // Replace with actual contract address
+        },
+    },
+
+};
+
 export async function getOnChainActions(wallet: WalletClientBase) {
     const actionsWithoutHandler = [
         {
-            name: "SWAP_TOKENS",
-            description: "Swap two different tokens using KIM protocol",
+            name: "DEPOSIT_TO_VAULT",
+            description: "Deposit an amount into the ERC4626 vault.",
             similes: [],
             validate: async () => true,
             examples: [],
         },
         {
-            name: "GET_TOKEN_BALANCE",
-            description: "Get the balance of an ERC20 token in base units. Convert to decimal units before returning.",
+            name: "WITHDRAW_FROM_VAULT",
+            description: "Withdraw an amount from the ERC4626 vault.",
+            similes: [],
+            validate: async () => true,
+            examples: [],
+        },
+        {
+            name: "GET_MAX_WITHDRAW",
+            description: "Get the max withdrawal amount of an ERC4626 vault",
+            similes: [],
+            validate: async () => true,
+            examples: [],
+        },
+        {
+            name: "GET_VAULT_OWNER",
+            description: "Get the owner of an ERC4626 vault.",
+            similes: [],
+            validate: async () => true,
+            examples: [],
+        },
+        {
+            name: "GET_VAULT_SYMBOL",
+            description: "Get the symbol of an ERC4626 vault.",
+            similes: [],
+            validate: async () => true,
+            examples: [],
+        },
+        {
+            name: "GET_VAULT_NAME",
+            description: "Get the name of an ERC4626 vault.",
+            similes: [],
+            validate: async () => true,
+            examples: [],
+        },
+        {
+            name: "GET_UNDERLYING_TOKEN",
+            description: "Get the underlying Token of an ERC4626 vault.",
+            similes: [],
+            validate: async () => true,
+            examples: [],
+        },
+        {
+            name: "GET_TOTAL_ASSETS",
+            description: "Get the TotalAssets of an ERC4626 vault.",
+            similes: [],
+            validate: async () => true,
+            examples: [],
+        },
+        {
+            name: "GET_TOTAL_SUPPLY",
+            description: "Get the TotalSupply of an ERC4626 vault.",
             similes: [],
             validate: async () => true,
             examples: [],
@@ -47,7 +108,7 @@ export async function getOnChainActions(wallet: WalletClientBase) {
     const tools = await getOnChainTools({
         wallet: wallet,
         // 2. Configure the plugins you need to perform those actions
-        plugins: [sendETH(), erc20({ tokens: [sozuHausResident] }), kim()],
+        plugins: [sendETH(), erc20({ tokens: [sozuHausResident] }), erc4626({ vaults: [sozuHausResidentVault] }),],
     });
 
     // 3. Let GOAT handle all the actions

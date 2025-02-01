@@ -1,0 +1,58 @@
+{
+    "name": "goat-erc4626",
+    "version": "0.1.0",
+    "type": "module",
+    "files": [
+        "dist"
+    ],
+    "scripts": {
+        "build": "tsup src/index.ts --format esm --dts",
+        "dev": "tsup src/index.ts --format esm --dts --watch",
+        "lint": "biome lint .",
+        "lint:fix": "biome check --apply .",
+        "format": "biome format .",
+        "format:fix": "biome format --write .",
+        "start": "tsx src/doit.ts"
+    },
+    "main": "./dist/index.js",
+    "module": "./dist/index.js",
+    "types": "./dist/index.d.ts",
+    "exports": {
+        ".": {
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/index.js"
+            }
+        }
+    },
+    "sideEffects": false,
+    "homepage": "https://ohmygoat.dev",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/goat-sdk/goat.git"
+    },
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/goat-sdk/goat/issues"
+    },
+    "keywords": [
+        "ai",
+        "agents",
+        "web3",
+        "erc4626"
+    ],
+    "dependencies": {
+        "@goat-sdk/wallet-evm": "^0.2.7",
+        "viem": "^2.22.17",
+        "zod": "^3.22.4"
+    },
+    "peerDependencies": {
+        "@goat-sdk/core": "^0.4.6"
+    },
+    "devDependencies": {
+        "@biomejs/biome": "^1.9.4",
+        "tsup": "^8.3.5",
+        "tsx": "^4.7.0",
+        "typescript": "^5.3.3"
+    }
+}

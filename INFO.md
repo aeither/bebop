@@ -59,6 +59,8 @@ node-hid issue when running `pnpm install`
 
 Build it with Goat SDK. Import it. Map it to the GOAT Plugin.
 
+
+
 ## References
 
 https://github.com/elizaos/eliza

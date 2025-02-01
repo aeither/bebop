@@ -29,6 +29,9 @@ importers:
       '@goat-sdk/wallet-viem':
         specifier: ^0.2.0
         version: 0.2.0(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3))(viem@2.22.17(typescript@5.7.3)(zod@3.23.8))
+      goat-erc4626:
+        specifier: ^0.1.0
+        version: 0.1.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)
       viem:
         specifier: ^2.22.17
         version: 2.22.17(typescript@5.7.3)(zod@3.23.8)
@@ -594,6 +597,11 @@ packages:
     resolution: {integrity: sha512-w/sWi7WHsTz8G+jNWI0xJ+l4wWOVFrSxh7PHfYOEZQyFexOioEdEG5QGYkgYT3/VoYApsx9G1H8itKxs1Mg5Mw==}
     peerDependencies:
       '@goat-sdk/core': 0.4.0
+
+  '@goat-sdk/wallet-evm@0.2.7':
+    resolution: {integrity: sha512-1lWDAn/QAnGb6k7Fd8pS6g6Rz9jU2HB5mS/auxRyex9ohRnYlCluFz9aBo0G9rPVfPrviyMbVH+yCB1Fl3VxPg==}
+    peerDependencies:
+      '@goat-sdk/core': 0.4.6
 
   '@goat-sdk/wallet-viem@0.2.0':
     resolution: {integrity: sha512-x9FTUg9/ZhJyx8tQMAuIGmoFfRkmyDge78yvd9CTK6SQTiYQ/Hio7rAmHjLE95lElXb6EumZu7R0IlX3m/SGSw==}
@@ -1390,6 +1398,11 @@ packages:
     resolution: {integrity: sha512-9UiX/Bl6J2yaBbxKoEBRm4Cipxgok8kQYcOPEhScPwebu2I0HoQOuYdIO6S3hLuWoZgpDpwQZMzTFxgpkyT76g==}
     engines: {node: 20 || >=22}
     hasBin: true
+
+  goat-erc4626@0.1.0:
+    resolution: {integrity: sha512-p9Qn9JR034oDZESRJjJcegGLFa0akqfnadqWBzcBYMjSnSbX+vQi13xCCwEuET/PaKzpyuuSx7qN5Bdr6wXAGQ==}
+    peerDependencies:
+      '@goat-sdk/core': ^0.4.6
 
   google-auth-library@9.15.1:
     resolution: {integrity: sha512-Jb6Z0+nvECVz+2lzSMt9u98UsoakXxA2HGHMCxh+so3n90XgYWkq5dur19JAJV7ONiJY22yBTyJB1TSkvPq9Ng==}
@@ -2911,6 +2924,17 @@ snapshots:
       - typescript
       - utf-8-validate
 
+  '@goat-sdk/wallet-evm@0.2.7(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)':
+    dependencies:
+      '@goat-sdk/core': 0.4.6(zod@3.23.8)
+      abitype: 1.0.8(typescript@5.7.3)(zod@3.23.8)
+      viem: 2.21.49(typescript@5.7.3)(zod@3.23.8)
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - bufferutil
+      - typescript
+      - utf-8-validate
+
   '@goat-sdk/wallet-viem@0.2.0(@goat-sdk/wallet-evm@0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3))(viem@2.22.17(typescript@5.7.3)(zod@3.23.8))':
     dependencies:
       '@goat-sdk/wallet-evm': 0.2.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)
@@ -3789,6 +3813,17 @@ snapshots:
       minipass: 7.1.2
       package-json-from-dist: 1.0.1
       path-scurry: 2.0.0
+
+  goat-erc4626@0.1.0(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3):
+    dependencies:
+      '@goat-sdk/core': 0.4.6(zod@3.23.8)
+      '@goat-sdk/wallet-evm': 0.2.7(@goat-sdk/core@0.4.6(zod@3.23.8))(typescript@5.7.3)
+      viem: 2.22.17(typescript@5.7.3)(zod@3.23.8)
+      zod: 3.23.8
+    transitivePeerDependencies:
+      - bufferutil
+      - typescript
+      - utf-8-validate
 
   google-auth-library@9.15.1:
     dependencies:
