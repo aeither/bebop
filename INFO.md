@@ -27,3 +27,13 @@ Fix error: Used disallowed intents. Active The Discord Bot
 Bot -> Privileged Gateway Intents -> MESSAGE CONTENT INTENT
 
 Discord Bot needs to be Tagged.
+
+
+## DB
+
+Defined in database/index
+it is storing local if no postgres url is provided
+
+**Using Postgres**
+
+Use Docker Image `pgvector/pgvector:pg17` and add `POSTGRES_URL` to .env
