@@ -46,6 +46,11 @@ In `docker-compose.yaml` change Port and expose it to firewall
 `ERR_USE_AFTER_CLOSE`
 on railway, digital ocean, needs to `DAEMON_PROCESS=true`
 
+**Deploying an Isolated Monorepo in Railway**
+
+`Service → Settings → Source → Root Directory`
+
+
 ## Project folder name can't contain space
 
 node-hid issue when running `pnpm install`
