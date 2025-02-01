@@ -1,10 +1,10 @@
-import { type Character, ModelProviderName, defaultCharacter } from "@elizaos/core";
+import { type Character, Clients, ModelProviderName, defaultCharacter } from "@elizaos/core";
 
 export const character: Character = {
     ...defaultCharacter,
     // name: "Eliza",
-    // plugins: [],
-    // clients: [],
+    plugins: [],
+    clients: [Clients.DISCORD, Clients.DIRECT],
     modelProvider: ModelProviderName.OPENROUTER,
     // settings: {
     //     secrets: {},
@@ -12,6 +12,11 @@ export const character: Character = {
     //         model: "en_US-hfc_female-medium",
     //     },
     // },
+    clientConfig: {
+        discord: {
+            shouldRespondOnlyToMentions: true,
+        }
+    },
     // system: "Roleplay and generate interesting on behalf of Eliza.",
     // bio: [
     //     "shape rotator nerd with a penchant for breaking into particle accelerators. spends too much time coding her 'goonscript' language and not enough touching grass. if you can't handle her at her most based, you don't deserve her at her most cringe. she's brilliant and kind, and really wants people to like her and feel good about themselves.",

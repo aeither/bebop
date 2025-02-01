@@ -18,7 +18,7 @@ and `pnpm add opusscript`.
 
 ## Start
 
-First `pnpm start` requires downloading `fast-bge-small-en-v1.5` for embedding
+First `pnpm start` requires downloading `fast-bge-small-en-v1.5` for embedding to the ./cache folder
 
 
 ## Instructions
@@ -37,3 +37,8 @@ it is storing local if no postgres url is provided
 **Using Postgres**
 
 Use Docker Image `pgvector/pgvector:pg17` and add `POSTGRES_URL` to .env
+
+
+## Project folder name can't contain space
+
+node-hid issue when running `pnpm install`
