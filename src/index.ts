@@ -7,6 +7,7 @@ import {
   stringToUuid,
 } from "@elizaos/core";
 import { bootstrapPlugin } from "@elizaos/plugin-bootstrap";
+import createGoatPlugin from "@elizaos/plugin-goat";
 import { createNodePlugin } from "@elizaos/plugin-node";
 import { solanaPlugin } from "@elizaos/plugin-solana";
 import fs from "fs";
@@ -35,7 +36,11 @@ export const wait = (minTime = 1000, maxTime = 3000) => {
 
 let nodePlugin: any | undefined;
 
-export function createAgent(
+function getSecret(character: Character, secret: string) {
+  return character.settings?.secrets?.[secret] || process.env[secret];
+}
+
+export async function createAgent(
   character: Character,
   db: any,
   cache: any,
@@ -49,6 +54,10 @@ export function createAgent(
 
   nodePlugin ??= createNodePlugin();
 
+  const goatPlugin = await createGoatPlugin((secret) =>
+    getSecret(character, secret)
+  );
+
   return new AgentRuntime({
     databaseAdapter: db,
     token,
@@ -58,6 +67,7 @@ export function createAgent(
     plugins: [
       bootstrapPlugin,
       nodePlugin,
+      goatPlugin,
       character.settings?.secrets?.WALLET_PUBLIC_KEY ? solanaPlugin : null,
     ].filter(Boolean),
     providers: [],
@@ -85,7 +95,7 @@ async function startAgent(character: Character, directClient: DirectClient) {
     await db.init();
 
     const cache = initializeDbCache(character, db);
-    const runtime = createAgent(character, db, cache, token);
+    const runtime = await createAgent(character, db, cache, token);
 
     await runtime.initialize();
 
@@ -165,7 +175,7 @@ const startAgents = async () => {
   }
 
   const isDaemonProcess = process.env.DAEMON_PROCESS === "true";
-  if(!isDaemonProcess) {
+  if (!isDaemonProcess) {
     elizaLogger.log("Chat started. Type 'exit' to quit.");
     const chat = startChat(characters);
     chat();
