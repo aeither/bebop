@@ -16,17 +16,17 @@ import fs from "node:fs";
 import net from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import createGoatPlugin from "../goat/adapter/index.js";
-import { initializeDbCache } from "./cache/index.js";
-import { character } from "./character.js";
-import { startChat } from "./chat/index.js";
-import { initializeClients } from "./clients/index.js";
+import createGoatPlugin from "../goat/adapter/index";
+import { initializeDbCache } from "./cache/index";
+import { character } from "./character";
+import { startChat } from "./chat/index";
+import { initializeClients } from "./clients/index";
 import {
   getTokenForProvider,
   loadCharacters,
   parseArguments,
-} from "./config/index.js";
-import { initializeDatabase } from "./database/index.js";
+} from "./config/index";
+import { initializeDatabase } from "./database/index";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
