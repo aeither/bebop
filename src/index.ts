@@ -16,7 +16,6 @@ import fs from "node:fs";
 import net from "node:net";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
-import createGoatPlugin from "../goat/adapter/index";
 import { initializeDbCache } from "./cache/index";
 import { character } from "./character";
 import { startChat } from "./chat/index";
@@ -27,6 +26,7 @@ import {
   parseArguments,
 } from "./config/index";
 import { initializeDatabase } from "./database/index";
+import createGoatPlugin from "./goat/adapter";
 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);

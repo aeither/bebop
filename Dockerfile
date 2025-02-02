@@ -11,7 +11,6 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 WORKDIR /app
 COPY package.json pnpm-lock.yaml tsconfig.json ./
 COPY src/ ./src/
-COPY goat/ ./goat/
 
 RUN pnpm install --frozen-lockfile
 RUN pnpm build
@@ -35,7 +34,6 @@ WORKDIR /app
 COPY --from=builder /app/package.json /app/
 COPY --from=builder /app/node_modules /app/node_modules
 COPY --from=builder /app/src /app/src
-COPY --from=builder /app/goat /app/goat
 COPY --from=builder /app/dist /app/dist
 COPY --from=builder /app/tsconfig.json /app/
 COPY --from=builder /app/pnpm-lock.yaml /app/

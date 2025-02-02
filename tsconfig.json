@@ -11,8 +11,12 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "*": ["*"],
-      "@/*": ["src/*"]
+      "*": [
+        "*"
+      ],
+      "@/*": [
+        "src/*"
+      ]
     },
     "strict": false,
     "esModuleInterop": true,
@@ -31,5 +35,7 @@
     "emitDecoratorMetadata": true,
     "experimentalDecorators": true
   },
-  "include": ["src/**/*", "goat/**/*"]
+  "include": [
+    "src/**/*"
+  ]
 }
