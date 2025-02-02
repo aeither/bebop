@@ -9,6 +9,11 @@
     "moduleResolution": "bundler",
     "outDir": "./dist",
     "rootDir": ".",
+    "baseUrl": ".",
+    "paths": {
+      "*": ["*"],
+      "@/*": ["src/*"]
+    },
     "strict": false,
     "esModuleInterop": true,
     "skipLibCheck": true,
@@ -24,6 +29,7 @@
     "moduleDetection": "force",
     "allowArbitraryExtensions": true,
     "emitDecoratorMetadata": true,
-    "experimentalDecorators": true,
-  }
+    "experimentalDecorators": true
+  },
+  "include": ["src/**/*", "goat/**/*"]
 }

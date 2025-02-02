@@ -1,4 +1,4 @@
-FROM node:23.3.0-slim AS builder
+FROM node:23.7.0-slim AS builder
 
 # Install build dependencies
 RUN npm install -g pnpm@9.15.1 && \
@@ -12,6 +12,7 @@ RUN ln -s /usr/bin/python3 /usr/bin/python
 WORKDIR /app
 COPY package.json pnpm-lock.yaml tsconfig.json ./
 COPY src/ ./src/
+COPY goat/ ./goat/
 
 RUN pnpm install --frozen-lockfile
 RUN pnpm build
@@ -22,7 +23,7 @@ RUN mkdir -p /app/dist && \
 
 USER node
 
-FROM node:23.3.0-slim
+FROM node:23.7.0-slim
 
 # Install runtime dependencies
 RUN npm install -g pnpm@9.15.1 && \
@@ -36,6 +37,7 @@ WORKDIR /app
 COPY --from=builder /app/package.json /app/
 COPY --from=builder /app/node_modules /app/node_modules
 COPY --from=builder /app/src /app/src
+COPY --from=builder /app/goat /app/goat
 COPY --from=builder /app/dist /app/dist
 COPY --from=builder /app/tsconfig.json /app/
 COPY --from=builder /app/pnpm-lock.yaml /app/
