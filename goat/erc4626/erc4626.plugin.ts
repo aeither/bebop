@@ -1,8 +1,8 @@
 import { type Chain, PluginBase, createTool } from "@goat-sdk/core";
 import type { EVMWalletClient } from "@goat-sdk/wallet-evm";
+import { z } from "zod";
 import { ERC4626_ABI } from "./abi.js";
 import type { Vault } from "./vault.js";
-import { z } from "zod";
 
 export type ERC4626PluginCtorParams = {
     vaults: Vault[];
@@ -86,7 +86,7 @@ export class ERC4626Plugin extends PluginBase<EVMWalletClient> {
                             functionName: "maxWithdraw",
                             args: [parameters.vaultAddress],
                         });
-                        return rawBalance;
+                        return String(rawBalance.value);
                     } catch (error) {
                         throw Error(`Failed to fetch max withdraw: ${error}`);
                     }
@@ -108,7 +108,7 @@ export class ERC4626Plugin extends PluginBase<EVMWalletClient> {
                             functionName: "owner",
                             args: [],
                         });
-                        return rawBalance;
+                        return String(rawBalance.value);
                     } catch (error) {
                         throw Error(`Failed to fetch owner: ${error}`);
                     }
@@ -130,7 +130,7 @@ export class ERC4626Plugin extends PluginBase<EVMWalletClient> {
                             functionName: "symbol",
                             args: [],
                         });
-                        return rawBalance;
+                        return String(rawBalance.value);
                     } catch (error) {
                         throw Error(`Failed to fetch symbol: ${error}`);
                     }
@@ -152,7 +152,7 @@ export class ERC4626Plugin extends PluginBase<EVMWalletClient> {
                             functionName: "name",
                             args: [],
                         });
-                        return rawBalance;
+                        return String(rawBalance.value);
                     } catch (error) {
                         throw Error(`Failed to fetch name: ${error}`);
                     }
@@ -174,7 +174,7 @@ export class ERC4626Plugin extends PluginBase<EVMWalletClient> {
                             functionName: "underlyingToken",
                             args: [],
                         });
-                        return rawBalance;
+                        return String(rawBalance.value);
                     } catch (error) {
                         throw Error(`Failed to fetch underlying token: ${error}`);
                     }
@@ -196,7 +196,7 @@ export class ERC4626Plugin extends PluginBase<EVMWalletClient> {
                             functionName: "totalAssets",
                             args: [],
                         });
-                        return rawBalance;
+                        return String(rawBalance.value);
                     } catch (error) {
                         throw Error(`Failed to fetch total assets: ${error}`);
                     }
@@ -218,7 +218,7 @@ export class ERC4626Plugin extends PluginBase<EVMWalletClient> {
                             functionName: "totalSupply",
                             args: [],
                         });
-                        return rawBalance;
+                        return String(rawBalance.value);
                     } catch (error) {
                         throw Error(`Failed to fetch total supply: ${error}`);
                     }
