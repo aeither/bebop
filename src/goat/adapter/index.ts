@@ -1,6 +1,6 @@
 import type { Plugin } from "@elizaos/core";
-import { getOnChainActions } from "./actions.js";
-import { getWalletClient, getWalletProvider } from "./wallet.js";
+import { getOnChainActions } from "./actions";
+import { getWalletClient, getWalletProvider } from "./wallet";
 
 async function createGoatPlugin(
     getSetting: (key: string) => string | undefined

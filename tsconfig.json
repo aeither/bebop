@@ -11,12 +11,7 @@
     "rootDir": ".",
     "baseUrl": ".",
     "paths": {
-      "*": [
-        "*"
-      ],
-      "@/*": [
-        "src/*"
-      ]
+      "*": ["*"]
     },
     "strict": false,
     "esModuleInterop": true,
