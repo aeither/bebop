@@ -68,6 +68,15 @@ npm version patch && npm publish
 cd ../bebop-eliza && pnpm install
 ```
 
+## Railway vs VPS
+
+Railway can build using the `Dockerfile` provided in this repo with `docker-compose.yml`.
+
+VPS specially low on resources. It is better to use CI/CD. Learn more: https://docs.dokploy.com/docs/core/applications/going-production
+- gh workflow `deploy.yml` build and push the Docker image to Docker Hub
+- Use docker image from registry https://registry-1.docker.io
+- set `SERVER_PORT=YOUR_PORT` and `DAEMON_PROCESS=true`
+
 ## References
 
 https://github.com/elizaos/eliza
