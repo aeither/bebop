@@ -25,5 +25,6 @@ jobs:
           file: ./Dockerfile
           push: true
           tags: |
-            REPLACE_WITH_DOCKERHUB_USERNAME/example:latest 
+            aeither/bebop:latest
+            aeither/bebop:${{ github.sha }}
           platforms: linux/amd64
